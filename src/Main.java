@@ -14,7 +14,6 @@ public class Main {
         driver.manage().window().maximize();
         driver.findElement(By.id("postcode")).sendKeys("BN9");
         driver.findElement(By.id("get-storage-price-v-35")).click();
-//        driver.manage().timeouts().implicitlyWait(20000, tim.SECONDS);
         Thread.sleep(5000);
 
         driver.close();
