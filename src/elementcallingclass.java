@@ -1,8 +1,9 @@
 import org.openqa.selenium.By;
-
+import org.junit.*;
 public class elementcallingclass extends enviornmentSetup implements testclose {
 
     enviornmentSetup es;
+
     public  void postcodemethod(){
         es = new enviornmentSetup();
         es.envSetup();
@@ -10,7 +11,8 @@ public class elementcallingclass extends enviornmentSetup implements testclose {
         es.driver.findElement(By.id("get-storage-price-v-35")).click();
 
     }
-    public void closetestcaes(){
+
+    public void tearDown(){
         if(es.driver!=null)
         {
             es.driver.close();

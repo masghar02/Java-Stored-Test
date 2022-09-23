@@ -1,5 +1,5 @@
 interface testclose {
 
-    public void closetestcaes();
+    public void tearDown();
 
 }
