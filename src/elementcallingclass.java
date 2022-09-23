@@ -11,7 +11,10 @@ public class elementcallingclass extends enviornmentSetup implements testclose {
 
     }
     public void closetestcaes(){
-        es.driver.close();
-        es.driver.quit();
+        if(es.driver!=null)
+        {
+            es.driver.close();
+            es.driver.quit();
+        }
     }
 }
