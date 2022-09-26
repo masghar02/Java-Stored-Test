@@ -1,25 +1,54 @@
 
+import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.*;
 
-public class Main {
+public class Main extends elementcallingclass {
 
     public static void main(String[] args) throws InterruptedException {
 
+         try
+         {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Java\\Browser Drivers\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://bystored:bystored2020@stage.bystored.com");
-        driver.manage().window().maximize();
-        driver.findElement(By.id("postcode")).sendKeys("BN9");
-        driver.findElement(By.id("get-storage-price-v-35")).click();
-//        driver.manage().timeouts().implicitlyWait(20000, tim.SECONDS);
-        Thread.sleep(5000);
-
-        driver.close();
-        driver.quit();
-
+             elementcallingclass stored_elements = new elementcallingclass();
+             stored_elements.GetPostcode();
+             Thread.sleep(1000);
+             stored_elements.Step1flow();
+             Thread.sleep(1000);
+//        stored_elements.selectunit();
+//        Thread.sleep(1000);
+//        stored_elements.step1click();
+//        Thread.sleep(1000);
+             stored_elements.pickup_address();
+//        Thread.sleep(1000);
+//        stored_elements.addressline1();
+//        Thread.sleep(1500);
+//        stored_elements.addressline2();
+             Thread.sleep(1000);
+             stored_elements.monthdropdow();
+//        stored_elements.selectmonth();
+             Thread.sleep(1000);
+             stored_elements.datetimeselection();
+             Thread.sleep(1500);
+             stored_elements.packingassistancecheck();
+             Thread.sleep(2000);
+             stored_elements.discountCode();
+             Thread.sleep(2000);
+             stored_elements.step2click();
+             Thread.sleep(3000);
+             stored_elements.packingmaterals_materials_and_bundle();
+             Thread.sleep(3000);
+             stored_elements.userdetails();
+             Thread.sleep(30000);
+             stored_elements.logoutMethod();
+             Thread.sleep(30000);
+             stored_elements.closedriver();
+             System.out.println("Successfully Run");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
