@@ -1,5 +1,5 @@
 interface testclose {
 
-    public void tearDown();
+    public void closedriver();
 
 }
