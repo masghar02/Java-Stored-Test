@@ -1,23 +1,22 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class GetElements extends EnviornmentSetup implements Driveclose{
+public class GetElements extends EnvironmentSetup implements Driveclose{
 
-    EnviornmentSetup envsetup;
+    EnvironmentSetup envsetup;
+
     public void GetPostcode() throws InterruptedException {
 
-        envsetup = new EnviornmentSetup();
-        envsetup.StoredEnviornment();
+        envsetup = new EnvironmentSetup();
+        envsetup.storedEnvironment();
         Thread.sleep(2);
-        envsetup.wd.findElement(By.id("postcode")).sendKeys("BN9");
-        envsetup.wd.findElement(By.id("get-storage-price-v-35")).click();
+        envsetup.wd.findElement(By.id(envsetup.postCode)).sendKeys("BN9");
+        envsetup.wd.findElement(By.id(envsetup.get_a_Quote)).click();
         envsetup.wd.manage().timeouts().implicitlyWait(50, TimeUnit.MINUTES);
     }
     public  void Step1flow() throws InterruptedException{
-      envsetup.wd.findElement(By.id("skip")).click();
+      envsetup.wd.findElement(By.id(envsetup.popupskip)).click();
       Thread.sleep(3000);
        envsetup.wd.findElement(By.xpath("//body[1]/main[1]/div[1]/div[3]/div[2]/div[1]/ul[1]/div[1]/div[1]/div[1]/div[3]/div[1]/li[1]")).click();
        Thread.sleep(3000);
@@ -81,20 +80,20 @@ public class GetElements extends EnviornmentSetup implements Driveclose{
 
     public void packingmaterals_materials_and_bundle() throws InterruptedException{
         envsetup.wd.findElement(By.id("addBundleCartBtn_38")).click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         envsetup.wd.findElement(By.xpath("//body/main[@id='st-container']/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         envsetup.wd.findElement(By.id("plus_18")).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         envsetup.wd.findElement(By.id("addCartBtn_18")).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         envsetup.wd.findElement(By.id("submitCart")).click();
 
     }
     public void userdetails(){
-        envsetup.wd.findElement(By.id("name")).sendKeys("Asghar Auto");
-        envsetup.wd.findElement(By.id("email")).sendKeys("asgharauto1@bys.com");
-        envsetup.wd.findElement(By.id("customerPhone")).sendKeys("7410852963");
+        envsetup.wd.findElement(By.id(envsetup.userNameid)).sendKeys(userName);
+        envsetup.wd.findElement(By.id(envsetup.userEmailid)).sendKeys(email);
+        envsetup.wd.findElement(By.id(envsetup.userphoneNumberid)).sendKeys(phoneNumber);
         envsetup.wd.findElement(By.id("v-35-step3-cta-next")).click();
     }
 

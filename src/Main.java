@@ -1,13 +1,4 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-
-public class Main extends EnviornmentSetup {
+public class Main extends EnvironmentSetup {
     public static void main(String[] args) throws InterruptedException {
 
         GetElements stored_elements = new GetElements();
@@ -35,7 +26,7 @@ public class Main extends EnviornmentSetup {
         stored_elements.discountCode();
         Thread.sleep(2000);
         stored_elements.step2click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         stored_elements.packingmaterals_materials_and_bundle();
         Thread.sleep(3000);
         stored_elements.userdetails();
