@@ -1,6 +1,8 @@
 import org.openqa.selenium.By;
 import org.junit.*;
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.interactions.Actions;
+
 public class elementcallingclass extends enviornmentSetup implements testclose {
 
     enviornmentSetup envsetup;
@@ -94,6 +96,15 @@ public class elementcallingclass extends enviornmentSetup implements testclose {
         envsetup.wd.findElement(By.id(envsetup.userEmailid)).sendKeys(email);
         envsetup.wd.findElement(By.id(envsetup.userphoneNumberid)).sendKeys(phoneNumber);
         envsetup.wd.findElement(By.id("v-35-step3-cta-next")).click();
+    }
+
+    public void logoutMethod() throws InterruptedException{
+        Actions action = new Actions(envsetup.wd);
+        String profile = String.valueOf(envsetup.wd.findElement(By.xpath(envsetup.profileHover)));
+        action.moveToElement(envsetup.wd.findElement(By.xpath(envsetup.profileHover))).perform();
+        Thread.sleep(3000);
+        envsetup.wd.findElement(By.xpath(envsetup.logout)).click();
+
     }
 
     public void closedriver(){

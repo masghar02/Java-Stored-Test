@@ -42,18 +42,13 @@ public class Main extends elementcallingclass {
              Thread.sleep(3000);
              stored_elements.userdetails();
              Thread.sleep(30000);
+             stored_elements.logoutMethod();
+             Thread.sleep(30000);
              stored_elements.closedriver();
              System.out.println("Successfully Run");
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
-
-
-
-
-
-
 
     }
 }

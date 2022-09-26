@@ -1,7 +1,7 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.junit.*;
-import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Action;
+
 public class enviornmentSetup extends chromedriver  {
 
 
@@ -13,8 +13,11 @@ public class enviornmentSetup extends chromedriver  {
     String userEmailid="email";
     String userphoneNumberid="customerPhone";
     String userName = "Asghar Test1";
-    String email= "asgharauto2@bys.com";
+    String email= "asgharauto3@bys.com";
     String phoneNumber = "7410852963";
+
+    String profileHover = "//body/div[4]/ul[1]/li[4]";
+    String logout = "//body/div[4]/ul[1]/li[4]/div[2]/a[2]";
     public void storedEnvironment(){
         chromedriver cs = new chromedriver();
         wd = new ChromeDriver();
