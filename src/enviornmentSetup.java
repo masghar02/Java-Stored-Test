@@ -13,8 +13,11 @@ public class enviornmentSetup extends chromedriver  {
     String userEmailid="email";
     String userphoneNumberid="customerPhone";
     String userName = "Asghar Test1";
-    String email= "asgharauto3@bys.com";
+    String email= "asgharqatest2@bystored.com";
     String phoneNumber = "7410852963";
+
+    String emailexist = "//div[@id='popup-link']";
+    String newemail ="asgharauto4@bys.uk";
 
     String profileHover = "//body/div[4]/ul[1]/li[4]";
     String logout = "//body/div[4]/ul[1]/li[4]/div[2]/a[2]";

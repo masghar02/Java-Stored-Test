@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 public class elementcallingclass extends enviornmentSetup implements testclose {
 
     enviornmentSetup envsetup;
+    elementcallingclass ec;
 
     public void GetPostcode() throws InterruptedException {
 
@@ -60,7 +61,7 @@ public class elementcallingclass extends enviornmentSetup implements testclose {
     public void datetimeselection() throws InterruptedException{
         envsetup.wd.findElement(By.id("opener")).click();
         Thread.sleep(1000);
-        envsetup.wd.findElement(By.xpath("//a[contains(text(),'28')]")).click();
+        envsetup.wd.findElement(By.xpath("//a[contains(text(),'29')]")).click();
         Thread.sleep(3000);
         envsetup.wd.findElement(By.xpath("//body[1]/main[1]/div[1]/div[3]/div[1]/form[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/li[3]")).click();
         Thread.sleep(3000);
@@ -91,11 +92,26 @@ public class elementcallingclass extends enviornmentSetup implements testclose {
         envsetup.wd.findElement(By.id("submitCart")).click();
 
     }
-    public void userdetails(){
+    public void userdetails() throws InterruptedException{
         envsetup.wd.findElement(By.id(envsetup.userNameid)).sendKeys(userName);
+//        String emailexist = envsetup.wd.findElement(By.xpath(envsetup.emailexist)).isDisplayed();
         envsetup.wd.findElement(By.id(envsetup.userEmailid)).sendKeys(email);
         envsetup.wd.findElement(By.id(envsetup.userphoneNumberid)).sendKeys(phoneNumber);
         envsetup.wd.findElement(By.id("v-35-step3-cta-next")).click();
+        Thread.sleep(3000);
+        if(envsetup.wd.findElement(By.xpath(envsetup.emailexist)).isDisplayed()==true){
+            envsetup.wd.findElement(By.id(envsetup.userEmailid)).clear();
+            envsetup.wd.close();
+            envsetup.wd.quit();
+        }
+        else {
+            envsetup.wd.findElement(By.id(envsetup.userEmailid)).clear();
+            envsetup.wd.findElement(By.id(envsetup.userEmailid)).sendKeys(newemail);
+            envsetup.wd.findElement(By.id("v-35-step3-cta-next")).click();
+        }
+
+//        envsetup.wd.findElement(By.id(envsetup.userphoneNumberid)).sendKeys(phoneNumber);
+//        envsetup.wd.findElement(By.id("v-35-step3-cta-next")).click();
     }
 
     public void logoutMethod() throws InterruptedException{

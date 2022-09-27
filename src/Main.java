@@ -42,8 +42,10 @@ public class Main extends elementcallingclass {
              Thread.sleep(30000);
              stored_elements.closedriver();
              System.out.println("Successfully Run Done");
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        } catch (Throwable e) {
+             System.out.println(e.getCause());
+             System.out.println(e.getMessage());
+             e.getStackTrace();
         }
 
     }
