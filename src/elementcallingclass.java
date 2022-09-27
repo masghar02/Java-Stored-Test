@@ -1,5 +1,5 @@
 import org.openqa.selenium.By;
-import org.junit.*;
+
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.interactions.Actions;
 
