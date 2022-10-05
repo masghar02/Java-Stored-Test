@@ -1,5 +1,5 @@
 import org.openqa.selenium.By;
-
+import org.openqa.selenium.JavascriptExecutor;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.interactions.Actions;
 
@@ -13,6 +13,9 @@ public class elementcallingclass extends enviornmentSetup implements testclose {
         envsetup = new enviornmentSetup();
         envsetup.storedEnvironment();
         Thread.sleep(2);
+        JavascriptExecutor js = (JavascriptExecutor) envsetup.wd;
+        js.executeScript("wwindow.scrollBy(0,5000)");
+        Thread.sleep(2);
         envsetup.wd.findElement(By.id(envsetup.postCode)).sendKeys("BN9");
         envsetup.wd.findElement(By.id(envsetup.get_a_Quote)).click();
         envsetup.wd.manage().timeouts().implicitlyWait(50, TimeUnit.MINUTES);
@@ -22,7 +25,9 @@ public class elementcallingclass extends enviornmentSetup implements testclose {
         Thread.sleep(3000);
         envsetup.wd.findElement(By.xpath("//body[1]/main[1]/div[1]/div[3]/div[2]/div[1]/ul[1]/div[1]/div[1]/div[1]/div[3]/div[1]/li[1]")).click();
         Thread.sleep(3000);
+        JavascriptExecutor js = (JavascriptExecutor) envsetup.wd;
         envsetup.wd.findElement(By.id("v-35-step1-cta-next")).click();
+        js.executeScript("wwindow.scrollBy(0,5000)");
         Thread.sleep(3000);
     }
     //    public void selectunit(){
