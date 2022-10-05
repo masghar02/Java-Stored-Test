@@ -1,7 +1,10 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 public class elementcallingclass extends enviornmentSetup implements testclose {
 
@@ -104,8 +107,12 @@ public class elementcallingclass extends enviornmentSetup implements testclose {
         envsetup.wd.findElement(By.id(envsetup.userphoneNumberid)).sendKeys(phoneNumber);
         envsetup.wd.findElement(By.id("v-35-step3-cta-next")).click();
         Thread.sleep(3000);
-        if(envsetup.wd.findElement(By.xpath(envsetup.emailexist)).isDisplayed()==true){
+        WebElement element = envsetup.wd.findElement(By.xpath(envsetup.emailexist));
+        if(element.isDisplayed()==true){
             envsetup.wd.findElement(By.id(envsetup.userEmailid)).clear();
+            System.out.println("Email Already exist");
+//            Select select = new Select(element);
+
             envsetup.wd.close();
             envsetup.wd.quit();
         }
